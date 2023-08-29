@@ -42,7 +42,7 @@
     outline: none;
   }
   input:focus{
-    border: 2px solid --Purple;
+    border: 2px solid var(--purple);
   }
   small{
     color: var(--Light-red);
@@ -95,6 +95,9 @@
       position: relative;
       border-bottom-right-radius: 150px;
     }
+    input{
+      padding: 0px;
+    }
     .submit-btn{
       border-radius: 50%;
       position: absolute;
@@ -104,6 +107,7 @@
 
     .output{
         margin-top: 5rem;
+        padding: 20px;
     }
     .output h1{
         font-size: 3.5rem;

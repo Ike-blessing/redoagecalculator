@@ -17,7 +17,11 @@ const error_day = document.querySelector('.error-day');
 submit_btn.addEventListener('click', calculatedate)
 
 input_day.addEventListener('input', e =>{
-    if(+input_day.value > 31){
+    if(+input_day.value < 1 ){
+        error_day.textContent = "must be a valid day";
+        isvalid = false;
+        return;
+    }else if(+input_day.value > 31 ){
         error_day.textContent = "must be a valid day";
         isvalid = false;
         return;
@@ -59,7 +63,7 @@ input_year.addEventListener('input', e =>{
         isvalid = true;
         error_year.textContent = "this feild is required";
     }
-    if (+input_year.value === 0 ){
+    if (+input_year.value < 1 ){
         isvalid = false;
         return;
     }else{
@@ -67,20 +71,39 @@ input_year.addEventListener('input', e =>{
     }
 });
 
-function calculatedate(){
-    if (isvalid){
-        let birthday = (input_month.value)/(input_day.value)/(input_year.value);
-        console.log(birthday);
-        let birthdateobj = new Date(birthday);
-        let ageDiffMill = Date.now() - birthdateobj;
-        let ageDate = new Date (ageDiffMill);
-        let ageyears = ageDate.getFullYear() - 1970;
-        let ageMonth = ageDate.getMonth();
-        let ageDay = ageDate.getDay() - 1;
+function calculatedate(e){
 
-        output_day.textContent = ageDay;
-        output_month.textContent = ageMonth;
-        output_year.textContent = ageyears;
+    if (isvalid){
+        let ageDate = new Date ();
+        let ageyears = ageDate.getUTCFullYear();
+        let ageMonth = ageDate.getUTCMonth() + 1;
+        let ageDay = ageDate.getUTCDay() ;
+
+        if (input_month.value === ageMonth){
+            dayotp =(input_day.value -  ageDay) - 30;
+            monthotp = (ageMonth - input_month.value) + 1 ;
+            yearotp = (ageyears - input_year.value);
+        };
+        
+        if(input_day.value > ageDay){
+            dayotp =(input_day.value -  ageDay) + 30;
+            monthotp = (ageMonth - input_month.value) -1;
+            yearotp = (ageyears - input_year.value);
+        };
+         
+        if (input_month.value > ageMonth){
+            dayotp =(input_day.value -  ageDay) ;
+            monthotp = (ageMonth - input_month.value) + 12 ;
+            yearotp = (ageyears - input_year.value) - 1;
+        };
+
+        output_day.textContent = dayotp;
+        output_month.textContent = monthotp;
+        output_year.textContent = yearotp;
+
+        dayotp = localStorage.setItem('dayotp', dayotp);
+        monthotp = localStorage.setItem('monthotp', monthotp);
+        yearotp = localStorage.setItem('yearotp', yearotp);
     }else{
         alert('error');
     }
