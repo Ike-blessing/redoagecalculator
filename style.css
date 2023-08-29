@@ -94,9 +94,15 @@
       max-width: 80%;
       position: relative;
       border-bottom-right-radius: 150px;
+      padding: 0px;
+    }
+    .input-flex{
+      padding: 0px;
     }
     input{
       padding: 0px;
+      width: 50px;
+      margin: 0px;
     }
     .submit-btn{
       border-radius: 50%;
