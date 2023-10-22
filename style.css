@@ -51,8 +51,8 @@
     text-transform: capitalize;
   }
   .submit-btn{
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     padding: 20px;
     display: flex;
     background-color: var(--Purple);
@@ -62,7 +62,7 @@
     border-radius: 50%;
     position: absolute;
     right: 30px;
-    top: 60px;
+    top: 100px;
   }
   .submit-btn:hover{
     background-color: black;
@@ -76,7 +76,7 @@
   .input-container{
     display: flex;
     flex-direction: column;
-    margin-left: 20px;
+    margin-left: 5%;
     margin-bottom: 20px;
   }
   .input-flex{
@@ -84,38 +84,37 @@
     border-bottom: 2px solid --Off-white;
     margin-bottom: 20px;
   }
+  .output{
+    margin-left: 6%;
+    margin-top: 10%;
+  }
 
   @media  screen and (max-width: 700px) {
-    
-  
-    #container{
-      background-color: var(--White);
-      width: 220px;
+
+    .container{
       max-width: 80%;
-      position: relative;
-      border-bottom-right-radius: 150px;
-      padding: 0px;
+      margin-left: 10%;
     }
     .input-flex{
       padding: 0px;
     }
     input{
       padding: 0px;
-      width: 50px;
+      width: 70px;
+      height: 25px;
       margin: 0px;
     }
     .submit-btn{
       border-radius: 50%;
       position: absolute;
-      left: 50px;
-      top: 120px;
+      left: 60px;
+      top: 105px;
     }
 
     .output{
         margin-top: 5rem;
-        padding: 20px;
     }
     .output h1{
-        font-size: 3.5rem;
+        font-size: 3rem;
     }
     }
