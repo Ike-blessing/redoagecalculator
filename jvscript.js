@@ -111,5 +111,4 @@ function calculatedate(){
       output_day.textContent = input_day;
       output_month.textContent = input_month;
       output_year.textContent = input_year;
- 
 };

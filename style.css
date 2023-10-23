@@ -89,35 +89,34 @@
     margin-top: 10%;
   }
 
-  @media  screen and (max-width: 700px) {
-    body{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .container{
-      max-width: 70%;
-    }
-    .input-flex{
-      padding: 0px;
-    }
-    input{
-      padding: 0px;
-      width: 70px;
-      height: 25px;
-      margin: 0px;
-    }
-    .submit-btn{
-      border-radius: 50%;
-      position: absolute;
-      left: 60px;
-      top: 105px;
-    }
-
-    .output{
-        margin-top: 5rem;
-    }
-    .output h1{
-        font-size: 3rem;
-    }
-    }
+@media  screen and (max-width: 700px) {
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container{
+  max-width: 70%;
+}
+.input-flex{
+  padding: 0px;
+}
+input{
+  padding: 0px;
+  width: 70px;
+  height: 25px;
+  margin: 0px;
+}
+.submit-btn{
+  border-radius: 50%;
+  position: absolute;
+  left: 60px;
+  top: 105px;
+}
+.output{
+  margin-top: 5rem;
+}
+.output h1{
+  font-size: 3rem;
+}
+}
