@@ -23,7 +23,7 @@ day.addEventListener('input', (e) => {
       return;
   }else if(+day.value < 1){
       isvalid = false;
-      error_day.textContent = "this feild is required";
+      error_day.textContent = "this field is required";
       return;
   }else{
       isvalid = true;
@@ -38,7 +38,7 @@ month.addEventListener('input', (e) => {
         return;
     }else if(+month.value < 1){
         isvalid = false;
-        error_month.textContent = "this feild is required";
+        error_month.textContent = "this field is required";
         return;
     }else{
         isvalid = true;
@@ -53,11 +53,11 @@ month.addEventListener('input', (e) => {
         return;
     }else if(+year.value === 0){
         isvalid = false;
-        error_year.textContent = "this feild is required";
+        error_year.textContent = "this field is required";
         return;
     }else if(+year.value < 1600){
         isvalid = false;
-        error_year.textContent = "invalid yaer";
+        error_year.textContent = "invalid year";
         return;
     }else{
         isvalid = true;
@@ -91,22 +91,6 @@ function calculatedate(){
   input_year = recentYear - input3;
 
 
-    //   if(recentDay > input1){
-    //     input_day = recentDay - input1 ;
-    //     input_month = recentMonth - input2 + 1;
-    //   };
-
-    //   if(recentMonth > input2){
-    //     input_day = recentDay - input1;
-    //     input_month = recentMonth - input2 + 1;
-    //   };
-      
-      
-    //   if(recentMonth < input2){
-    //     input_month = (recentMonth + 14) - input2;
-    //     input_year = recentYear - input3 - 1;
-    //   };
-
     if(input1 > recentDay){
         input_day = (recentDay + 30) - input1;
         input_month = recentMonth - input2 ;
@@ -124,14 +108,8 @@ function calculatedate(){
     }
     
 
-
       output_day.textContent = input_day;
       output_month.textContent = input_month;
       output_year.textContent = input_year;
  
-
-
-
- 
-
 };
